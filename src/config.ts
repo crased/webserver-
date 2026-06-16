@@ -9,7 +9,9 @@ type Config = {
 
 type APIConfig = {
   platform: string; 
+  jwtSecret: string;
   fileserverHits: number;
+  polkaKey: string;
 };
 
 type DBConfig = {
@@ -23,8 +25,10 @@ const migrationConfig: MigrationConfig = {
 
 export const config: Config = {
 api: {
-platform: envOrThrow("PLATFORM"),  
+platform: envOrThrow("PLATFORM"),
+jwtSecret: envOrThrow("JWTSECRET"),  
 fileserverHits: 0,
+polkaKey: envOrThrow("POLKA_KEY")
 },
 db: {
 dbURL: envOrThrow("DB_URL"),

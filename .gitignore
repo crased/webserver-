@@ -22,3 +22,7 @@ logs/
 
 # Claude Code
 .claude/
+
+#tests
+*.tests
+*./tests/
